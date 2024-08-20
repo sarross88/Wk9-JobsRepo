@@ -18,6 +18,7 @@ npm install && npm start
 
 #### User Model
 
+//models user.js 
 Email Validation Regex
 
 ```regex
@@ -26,6 +27,7 @@ Email Validation Regex
 
 #### Register User
 
+//token in response
 - Validate - name, email, password - with Mongoose
 - Hash Password (with bcryptjs)
 - Save User
@@ -44,16 +46,20 @@ Email Validation Regex
 
 #### Mongoose Errors
 
-- Validation Errors
+// TIME STAMP 8hr48min - Middleware Error Handler 
+- Validation Errors - ex auth.js in conroller with req.body 
+//not a unique email 
 - Duplicate (Email)
-- Cast Error
+//something doesn't exist 
+- Cast Error - where you are using IDs in Jobs you should edit this (9hr 5min)
+- END TIME STAMP @ 9hr9min
 
-#### Security
+#### Security (start 9hr9min end )
 
-- helmet
-- cors
-- xss-clean
-- express-rate-limit
+- helmet (HTTP headers really popular)
+- cors  ((Cross Orgin Resource Sharing)ensures api is accessible from another domain)
+- xss-clean  (sanitized req.body, req.params, protects against malicious code)
+- express-rate-limit (limits requests)
 
 Swagger UI
 
