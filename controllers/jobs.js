@@ -2,7 +2,6 @@ const Job = require('../models/Job')
 const { StatusCodes } = require('http-status-codes')
 const { BadRequestError, NotFoundError } = require('../errors')
 
-//only jobs assoicated with the user find() = would give you all the jobs
 const getAllJobs = async (req, res) => {
   const jobs = await Job.find({ createdBy: req.user.userId }).sort('createdAt')
   res.status(StatusCodes.OK).json({ jobs, count: jobs.length })
@@ -22,6 +21,7 @@ const getJob = async (req, res) => {
   }
   res.status(StatusCodes.OK).json({ job })
 }
+//STOPPED AT 9hr12min
 
 const createJob = async (req, res) => {
   req.body.createdBy = req.user.userId
@@ -73,3 +73,4 @@ module.exports = {
   updateJob,
   getJob,
 }
+
